@@ -2,6 +2,9 @@
 
 some photo spider.
 
+### 在scrapy中传参
+https://github.com/cloverzrg/photo-spider-scrapy/blob/969098797b959eb4a96b929c1886954043dd919a/absfreepic/absfreepic/spiders/absfreepic.py#L59
+
 ### create project
 ```
 scrapy startproject project_name
