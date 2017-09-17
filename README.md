@@ -1,6 +1,6 @@
-#photo-spider-scrapy
+# photo-spider-scrapy
 
-some photo spider by scrapy.
+some photo spider.
 
 ### create project
 ```
