@@ -66,11 +66,11 @@ CREATE TABLE `pexels` (
   `size` varchar(255) DEFAULT NULL,
   `resolution` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
-  `type_id` int(3) DEFAULT '0',
+  `type_id` tinyint(1) DEFAULT '0',
   `chinese_tags` varchar(255) DEFAULT NULL,
   `thumb_name` varchar(255) DEFAULT NULL,
   `thumb_name2` varchar(255) DEFAULT NULL,
-  `is_posted` int(255) DEFAULT '0',
+  `is_posted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=37971 DEFAULT CHARSET=utf8;
 
@@ -94,13 +94,13 @@ CREATE TABLE `stocksnap` (
   `width` int(11) DEFAULT NULL,
   `height` int(11) DEFAULT NULL,
   `chinese_tags` varchar(255) DEFAULT NULL,
-  `type_id` int(11) DEFAULT NULL,
+  `type_id` tinyint(1) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `file_size` char(10) DEFAULT NULL,
   `thumb_name` varchar(255) DEFAULT NULL,
   `thumb_name2` varchar(255) DEFAULT NULL,
-  `posted` int(2) DEFAULT '0',
+  `posted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`img_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=81955 DEFAULT CHARSET=utf8;
@@ -118,9 +118,9 @@ CREATE TABLE `stockvault` (
   `resolution` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `chinese_tags` varchar(255) DEFAULT NULL,
-  `is_posted` int(255) DEFAULT '0',
+  `is_posted` tinyint(1) DEFAULT '0',
   `thumb_name` varchar(255) DEFAULT NULL,
-  `type_id` int(11) DEFAULT NULL,
+  `type_id` tinyint(1) DEFAULT NULL,
   `chinese_title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=237592 DEFAULT CHARSET=utf8;
@@ -133,8 +133,8 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `LastIndexOf`(`str` varchar(255),`mysubstr` varchar(255)) RETURNS int(11)
 BEGIN
 	#Routine body goes here...
-	DECLARE pos int(5);
-	DECLARE re_pos int(5);
+	DECLARE pos int(11);
+	DECLARE re_pos int(11);
 	set re_pos = INSTR(REVERSE(str), REVERSE(mysubstr));
 	if re_pos = 0 THEN
 		RETURN 0;
